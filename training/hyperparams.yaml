@@ -1,0 +1,14 @@
+# training/hyperparams.yaml
+model_architecture: "Llama-3-8B"
+quantization: "4-bit"
+lora:
+  r: 16
+  alpha: 16
+  dropout: 0
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+training:
+  batch_size: 2
+  grad_accumulation: 4
+  learning_rate: 2e-4
+  optimizer: "adamw_8bit"
+  scheduler: "linear"
